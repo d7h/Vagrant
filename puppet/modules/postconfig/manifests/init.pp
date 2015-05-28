@@ -27,6 +27,13 @@ class postconfig {
     path => "/usr/local/bin:/bin:/usr/bin",
   }
 
+  exec { "Create Table" :    
+    command => "nodejs /vagrant/nodeapp/CreateTable.js && touch /TableCreated",
+    cwd => "/",
+    path => "/usr/local/bin:/bin:/usr/bin",
+    creates => "/TableCreated",
+  }
+
   Exec { environment => [ "HOME=/home/vagrant/" ] }
   
 }

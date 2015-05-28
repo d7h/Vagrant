@@ -11,7 +11,7 @@ class baseconfig {
     ip => '192.168.42.77';
   }
 
-  $packages = ["curl", "wget","vim", "nano", "npm"]
+  $packages = ["curl", "wget","vim", "nano", "npm", "node"]
   package { $packages:
     ensure => present,
   }
